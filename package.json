@@ -1,6 +1,6 @@
 
 {
-  "name": "react-native-applets",
+  "name": "react-native-jump-applets",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,18 @@
   "keywords": [
     "react-native"
   ],
+  "author": {
+    "name": "hozan",
+    "email": "1033682873@qq.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fengandrain/react-native-jump-applets.git"
+  },
   "author": "",
   "license": "",
   "peerDependencies": {
-    "react-native": "^0.41.2"
+    "react-native": "^0.59.9"
   }
 }
