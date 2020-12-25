@@ -40,6 +40,66 @@
 import * as RNApplets from 'react-native-jump-applets'
 
 // TODO: What to do with the module?
-RNApplets;
-```
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
+
+import React, { Component } from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  Text,
+  TouchableOpacity
+} from 'react-native';
+
+import * as RNApplets from 'react-native-jump-applets'
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
+  componentDidMount() {
+    RNApplets.registerApp('appid', (res) => {
+      console.log('register==' + JSON.stringify(res));
+    })
+  }
+  render() {
+    return (
+      <SafeAreaView>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.root}>
+          <TouchableOpacity onPress={() => {
+            RNApplets.launchMini({
+              userName: 'gh_xxx',
+              path: '/pages/minipro/minipro?xx=&xx=',
+              miniProgramType: 0 //0-正式版 1-开发版 2-体验版 
+            }, (res) => {
+              console.log('launchMini==' + JSON.stringify(res));
+            })
+            // RNApplets.openWXApp(() => { })
+          }}>
+            <Text>跳转微信小程序</Text>
+          </TouchableOpacity>
+        </ScrollView>
+      </SafeAreaView>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    backgroundColor: '#fff'
+  }
+})
+
   
