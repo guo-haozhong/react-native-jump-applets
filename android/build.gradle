@@ -1,3 +1,4 @@
+apply plugin: 'com.android.library'
 
 buildscript {
     repositories {
@@ -5,33 +6,37 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.1'
+        classpath 'com.android.tools.build:gradle:2.2.3'
     }
 }
 
-apply plugin: 'com.android.library'
-
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.2"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
     }
     lintOptions {
         abortOnError false
     }
 }
 
-repositories {
-    mavenCentral()
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "$projectDir/../../react-native/android" }
+    }
 }
 
 dependencies {
-    api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.3.1'
     implementation 'com.facebook.react:react-native:+'
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.3.1'
 }
   

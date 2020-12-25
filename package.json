@@ -21,6 +21,9 @@
   },
   "author": "",
   "license": "",
+  "dependencies": {
+    "events": "1.0.2"
+  },
   "peerDependencies": {
     "react-native": "^0.59.9"
   }
