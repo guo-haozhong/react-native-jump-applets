@@ -1,5 +1,5 @@
 
-# react-native-applets
+# react-native-jump-applets
 
 ## Getting started
 
